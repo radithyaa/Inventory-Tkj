@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventaris</title>
-    <link rel="icon" type="image/png" href="src/1727326973363.png">
+    <link rel="icon" type="image/png" href="s">
     <link rel="stylesheet" href="css/output.css">
 </head>
 
 <body>
-    <div class="flex flex-col w-full overflow-hidden font-sans wrap">
+    <div class="flex flex-col w-full overflow-x-hidden font-sans">
         <nav class="fixed z-50 flex items-center justify-between w-full p-5 bg-bookmark1 text-bookmark3 h-14">
             <span class="flex flex-row items-center gap-1">
                 <img src="src/1727326973363.png" alt="" class="h-10">
@@ -19,13 +19,13 @@
             </span>
             <span><a href="#" class="text-sm font-semibold text-white uppercase">Login</a></span>
         </nav>
-        <section class="relative flex flex-col items-center justify-center h-screen gap-12 top-10">
+        <section class="relative flex flex-col items-center justify-center h-screen gap-12 top-16">
             <form action=""
                 class="flex flex-col h-auto p-6 space-y-4 border rounded-lg shadow-md bg-bookmark1 border-bookmark3 text-bookmark2 w-96 ">
                 <!-- Barang Selection -->
                 <label for="Item" class="text-sm font-medium">Barang:</label>
                 <select name="Item" id="Item"
-                    class="p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300">
+                    class="p-2 border rounded border-bookmark2 focus:outline-none focus:ring focus:border-bookmark3">
                     <option value="Switch">Switch</option>
                     <option value="Router">Router</option>
                     <option value="Access Point">Access Point</option>
@@ -59,7 +59,7 @@
 
                 <!-- Submit Button -->
                 <input type="submit" value="Submit"
-                    class="px-4 py-2 font-medium text-white transition duration-200 bg-blue-500 rounded cursor-pointer hover:bg-blue-600">
+                    class="px-4 py-2 font-medium text-white transition duration-200 bg-blue-500 border rounded cursor-pointer hover:bg-blue-600 bg-bookmark3 text-bookmark1 hover:text-bookmark3 hover:bg-bookmark1 border-bookmark3">
             </form>
 
         </section>

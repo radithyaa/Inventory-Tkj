@@ -11,7 +11,17 @@ module.exports = {
       bookmark2: "#232323",
       bookmark3: "#F9322C",
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        bounceY: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-15px)" },
+        },
+      },
+      animation: {
+        bounceY: "bounceY 5s ease-in-out infinite",
+      },
+    },
   },
   plugins: [],
 };
