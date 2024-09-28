@@ -2,21 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .input {
+    @apply p-2 border rounded border-bookmark3 focus:outline-none focus:ring ring-opacity-40 ring-bookmark3 focus:border-none;
+  }
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.cdnfonts.com/css/arial-2");
-
-@keyframes bounceY {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px); /* Menggerakkan elemen ke atas sebesar 20px */
-  }
-}
-
-@layer components {
-  .animate-bounceY {
-    @apply bounceY duration-200 ease-in-out infinite;
-  }
-}
