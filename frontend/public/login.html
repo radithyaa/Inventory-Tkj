@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventaris</title>
+    <!-- Favicon yang digunakan untuk tab browser -->
+    <link rel="icon" type="image/png" href="s">
+    <!-- Link ke stylesheet output dari Tailwind CSS -->
+    <link rel="stylesheet" href="css/output.css">
+</head>
+
+<body>
+    <!-- Container utama menggunakan flexbox untuk vertikal layout -->
+    <div class="flex flex-col w-full overflow-x-hidden font-sans">
+
+        <!-- Navigasi utama yang fixed di atas dengan elemen navbar -->
+        <nav class="fixed z-50 flex items-center justify-between w-full h-16 p-5 bg-none text-bookmark3">
+            <!-- Logo dan teks Inventaris Tkj -->
+            <span class="flex flex-row items-center gap-1">
+                <!-- Gambar logo -->
+                <img src="src/1727326973363.png" alt="" class="h-10">
+                <!-- Link teks ke halaman index -->
+                <a href="index.html" class="font-sans text-base font-semibold text-white uppercase">Inventaris Tkj</a>
+            </span>
+            <!-- Link login -->
+            <span><a href="#" class="text-sm font-semibold text-white uppercase">Login</a></span>
+        </nav>
+
+        <!-- Bagian utama halaman -->
+        <section class="relative flex flex-col items-center justify-center h-screen gap-12 ">
+            <!-- Gambar latar belakang yang posisinya absolute dan hanya terlihat di layar medium ke atas -->
+            <div class="absolute hidden w-screen h-screen -z-50 md:block">
+                <!-- Gambar komputer -->
+                <img src="src/Computer.svg" alt="" class="absolute w-14 bottom-28 right-20 animate-bounceY ">
+                <!-- Gambar gear -->
+                <img src="src/Gear.svg" alt="" class="absolute w-14 top-28 sm:top-20 left-32 animate-bounceY">
+                <!-- Gambar wrench -->
+                <img src="src/Wrench.svg" alt="" class="absolute w-14 top-[3.75rem] right-64 animate-bounceY">
+                <!-- Gambar lingkaran besar yang berada di kiri bawah dan setengah tersembunyi -->
+                <img src="src/circle.svg" alt=""
+                    class="absolute w-3/5 opacity-50 bottom-16 -left-72 md:hidden lg:block">
+            </div>
+
+            <!-- Formulir login -->
+            <form action=""
+                class="flex flex-col h-auto p-6 space-y-4 shadow-[0px_0px_50px_0px_rgba(244,57,47,0.2)] border-1 rounded-2xl bg-bookmark1 border-bookmark3 text-bookmark2 w-[30rem] placeholder:font-sans">
+
+                <!-- Judul form login -->
+                <h1 class="mb-1 text-base font-medium text-center text-bookmark3">Login</h1>
+
+                <!-- Input username -->
+                <label for="username" class="text-sm font-medium">Username:</label>
+                <input type="text" id="name" name="username" class="input" placeholder="Masukkan username" required>
+
+                <!-- Input password -->
+                <label for="password" class="text-sm font-medium">Password:</label>
+                <input type="text" id="Class" name="password" class="input" placeholder="Masukkan password" required>
+
+                <!-- Tombol submit -->
+                <input type="submit" value="Submit"
+                    class="relative px-4 py-2 mb-8 font-medium text-white transition duration-150 bg-blue-500 border rounded cursor-pointer top-3 hover:bg-bookmark3 hover:text-bookmark1 text-bookmark3 border-bookmark3">
+            </form>
+
+        </section>
+    </div>
+</body>
+
+</html>

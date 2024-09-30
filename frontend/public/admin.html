@@ -5,24 +5,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventaris</title>
-    <link rel="icon" type="image/png" href="src/1727326973363.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="s">
+
+    <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="css/output.css">
+
+    <!-- Boxicons for icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body>
-    <div class="flex flex-col w-full overflow-hidden font-sans wrap">
-        <nav class="fixed z-50 flex items-center justify-between w-full p-5 bg-bookmark1 text-bookmark3 h-14">
-            <span class="flex flex-row items-center gap-1">
+<body class="bg-bookmark4">
+
+    <!-- Main container -->
+    <div class="flex flex-col w-full font-sans wrap bg-bookmark4">
+
+        <!-- Navbar section -->
+        <nav class="fixed z-50 flex items-center justify-between w-full h-16 p-5 bg-bookmark1">
+            <span class="flex flex-row items-center gap-1 text-bookmark3">
+                <!-- Logo image -->
                 <img src="src/1727326973363.png" alt="" class="h-10">
-                <a href="#" class="font-sans text-base font-semibold text-white uppercase">Inventaris Tkj
-                </a>
+
+                <!-- Website title -->
+                <a href="#" class="font-sans text-base font-semibold text-white uppercase">Inventaris Tkj</a>
             </span>
-            <span><a href="#" class="text-sm font-semibold text-white uppercase">Login</a></span>
+
+            <!-- User profile section -->
+            <span class="flex items-center gap-2 mr-2 text-sm font-medium text-white font-poppins text-bookmark3">
+                <a href="#" class="">Admin1</a>
+                <i class='text-3xl bx bx-user-circle'></i>
+            </span>
         </nav>
-        <section class="relative flex flex-col items-center justify-center h-screen gap-12 top-10">
-            <span class="text-bookmark3">Hello world!</span>
-        </section>
+
+        <!-- Toggle button for sidebar -->
+        <span
+            class="fixed flex items-center w-6 h-6 text-2xl duration-500 rounded-full cursor-pointer top-[5.75rem] left-[15.25rem] z-50 bg-bookmark3 text-bookmark1 rotate-180"
+            onclick="toggle()" id="toggle">
+            <i class='ease-in-out bx bx-chevron-right icon'></i>
+        </span>
+
+        <!-- Sidebar section -->
+        <aside
+            class="w-64 h-screen top-16 fixed flex p-3.5 text-bookmark2 font-poppins flex-col gap-4 font-medium bg-bookmark1 duration-500 transition-all"
+            id="sidebar">
+            <!-- Search input -->
+            <div class="gap-4 transition-colors duration-500 button hover:bg-bookmark4 hover:text-bookmark2 text-bookmark2 bg-bookmark4"
+                id="search">
+                <i
+                    class='w-16 text-xl text-center bg-none bx bx-search duration-500 transition-all icon leading-[3.25rem] relative top-1 right-0.5'></i>
+                <input type="search" placeholder="Search..."
+                    class=" button bg-bookmark4 hover:bg-bookmark4 hover:text-bookmark2 focus:outline-none">
+            </div>
+
+            <!-- Sidebar links -->
+            <!-- Link to 'Peminjaman' section -->
+            <div class="button">
+                <i
+                    class='relative flex items-center w-16 text-xl text-center bg-none bx bx-notepad top-0.5 right-0.5'></i>
+                <span class="text-base font-poppins sidebar-text">Peminjaman</span>
+            </div>
+
+            <!-- Link to 'Riwayat' section -->
+            <div class="button">
+                <i class='relative w-16 text-xl text-center bg-none bx bx-history top-0.5 right-0.5'></i>
+                <span class="text-base font-poppins sidebar-text">Riwayat</span>
+            </div>
+
+            <!-- Link to 'Stok' section -->
+            <div class="button">
+                <i class='relative w-16 text-xl text-center bg-none bx bx-category top-0.5'></i>
+                <span class="overflow-hidden text-base font-poppins sidebar-text">Stok</span>
+            </div>
+
+            <!-- Logout button -->
+            <div class="mt-[10.5rem] button mb-0">
+                <i class='w-16 text-xl text-center bg-none bx bx-log-out relative top-0.5 right-0.5'></i>
+                <span class="text-base font-poppins">Logout</span>
+            </div>
+        </aside>
+
+        <!-- Main content section -->
+        <main class="absolute right-0 flex flex-col h-screen p-4 transition-all duration-500 left-64 top-16" id="main">
+            <!-- Title -->
+            <div class="px-2 py-4 mb-3 text-3xl text-bookmark3">Peminjaman</div>
+
+            <!-- Table header -->
+            <div class="overflow-hidden rounded-xl">
+                <div class="flex px-4 rounded-none text-start button bg-bookmark3 text-bookmark1">
+                    <div class="flex-[4] lg:flex-[6]">Nama</div>
+                    <div class="flex-[2]">Barang</div>
+                    <div class="flex-[2]">Jumlah</div>
+                    <div class="flex-[2]">Kelas</div>
+                    <div class="flex-[2] hidden lg:block">Tanggal</div>
+                    <div class="flex-[1]"></div>
+                </div>
+                <hr>
+
+                <!-- Table row with data -->
+                <div
+                    class="flex items-center text-start pl-8 text-base rounded-none button hover:bg-[#e3e3e3] duration-150 bg-bookmark1 hover:text-bookmark2">
+                    <div class="flex-[4] lg:flex-[6] relative right-4">Reygan Sutan Indra</div>
+                    <div class="flex-[2]">Router</div>
+                    <div class="flex-[2]">10</div>
+                    <div class="flex-[2]">XI TKJ 1</div>
+                    <div class="flex-[2] hidden lg:block">02-Okt-2024</div>
+
+                    <!-- Approve and Reject buttons -->
+                    <div class="flex-[1] flex gap-2 justify-center mr-6 ">
+                        <span
+                            class="flex items-center justify-center w-8 h-8 rounded-full bg-bookmark4 hover:brightness-90">
+                            <i class='bx bx-check'> </i>
+                        </span>
+                        <span
+                            class="flex items-center justify-center w-8 h-8 rounded-full bg-bookmark4 hover:brightness-90">
+                            <i class='bx bx-x'></i>
+                        </span>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </main>
     </div>
+
+    <!-- JavaScript file -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,10 @@
 
 @layer components {
   .input {
-    @apply p-2 border rounded border-bookmark3 focus:outline-none focus:ring ring-opacity-40 ring-bookmark3 focus:border-none;
+    @apply p-2 border rounded border-bookmark3 focus:outline-none focus:ring ring-opacity-40 ring-bookmark3 focus:border-none appearance-none snap-none;
+  }
+  .button {
+    @apply text-nowrap w-full leading-[3.25rem] h-[3.25rem] overflow-hidden rounded-md hover:bg-bookmark3 hover:text-bookmark1 duration-200 cursor-pointer;
   }
 }
 
