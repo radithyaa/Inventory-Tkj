@@ -14,24 +14,23 @@
         <nav class="fixed z-50 flex items-center justify-between w-full h-16 p-5 bg-none text-bookmark3">
             <span class="flex flex-row items-center gap-1">
                 <img src="src/1727326973363.png" alt="" class="h-10">
-                <a href="index.html" class="font-sans text-base font-semibold text-white uppercase">Inventaris Tkj
-                </a>
+                <a href="index.html" class="font-sans text-base font-semibold text-white uppercase">Inventaris Tkj</a>
             </span>
             <span><a href="#" class="text-sm font-semibold text-white uppercase">Login</a></span>
         </nav>
         <section class="relative flex flex-col items-center justify-center h-screen gap-12 top-16">
             <div class="absolute hidden w-screen h-screen -z-50 md:block">
-                <img src="src/Computer.svg" alt="" class="absolute w-14 bottom-28 right-20 animate-bounceY ">
+                <img src="src/Computer.svg" alt="" class="absolute w-14 bottom-28 right-20 animate-bounceY">
                 <img src="src/Gear.svg" alt="" class="absolute w-14 top-28 sm:top-20 left-32 animate-bounceY">
                 <img src="src/Wrench.svg" alt="" class="absolute w-14 top-[3.75rem] right-64 animate-bounceY">
                 <img src="src/circle.svg" alt=""
                     class="absolute w-3/5 bottom-16 opacity-90 -left-72 md:hidden lg:block">
             </div>
-            <form action=""
+            <form id="formInventory"
                 class="flex flex-col h-auto p-6 space-y-4 shadow-[0px_0px_50px_0px_rgba(244,57,47,0.2)] border-1 rounded-2xl bg-bookmark1 border-bookmark3 text-bookmark2 w-[30rem] -mb-10 placeholder:font-sans">
                 <!-- Barang Selection -->
                 <label for="Item" class="text-sm font-medium">Barang:</label>
-                <select name="Item" id="Item" class="input ">
+                <select name="item" id="Item" class="input">
                     <option value="Switch">Switch</option>
                     <option value="Router">Router</option>
                     <option value="Access Point">Access Point</option>
@@ -41,7 +40,7 @@
 
                 <!-- Jumlah Input -->
                 <label for="total" class="text-sm font-medium">Jumlah:</label>
-                <input type="number" id="total" name="total" class="input " required placeholder="Masukkan jumlah">
+                <input type="number" id="total" name="total" class="input" required placeholder="Masukkan jumlah">
 
                 <!-- Nama Input -->
                 <label for="name" class="text-sm font-medium">Nama:</label>
@@ -49,19 +48,20 @@
 
                 <!-- Kelas Input -->
                 <label for="Class" class="text-sm font-medium">Kelas:</label>
-                <input type="text" id="Class" name="Class" class="input" required placeholder="Masukkan kelas">
+                <input type="text" id="Class" name="class" class="input" required placeholder="Masukkan kelas">
 
                 <!-- Tanggal Peminjaman Input -->
                 <label for="Date" class="text-sm font-medium">Tanggal Peminjaman:</label>
-                <input type="date" id="Date" name="Date" class="input" required placeholder="Pilih tanggal" disabled>
+                <input type="date" id="Date" name="date" class="input" required placeholder="Pilih tanggal" readonly>
 
                 <!-- Submit Button -->
                 <input type="submit" value="Submit"
                     class="relative px-4 py-2 font-medium text-white transition duration-150 bg-blue-500 border rounded cursor-pointer top-3 hover:bg-bookmark3 hover:text-bookmark1 text-bookmark3 border-bookmark3">
             </form>
-
         </section>
     </div>
+    <script src="js/main.js"></script>
+    <script src="js/form.js"></script>
 </body>
 
 </html>

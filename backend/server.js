@@ -1,30 +1,34 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv").config();
+const dotenv = require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static("frontend/public")); // Menyajikan file statis
 
 // Koneksi ke MongoDB
-const uri = process.env.MONGO_URI;
 mongoose
-  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log("MongoDB connection error:", err));
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.error("Failed to connect to MongoDB:", err));
 
-// Tambahkan endpoint dasar
+// Tambahkan rute untuk root
 app.get("/", (req, res) => {
-  res.send("Hello from the backend!");
+  res.send("Welcome to the Inventory API");
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`);
-});
+// Import rute dari file routes
+const formRoutes = require("./routes/formRoutes"); // Pastikan nama file rute sesuai
 
-const userRoutes = require("./routes/userRoutes");
-app.use("/users", userRoutes);
+// Gunakan rute form
+app.use("/api/form", formRoutes);
+
+// Menjalankan server pada port 5000
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
